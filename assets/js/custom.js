@@ -40,6 +40,35 @@ var heroSwiper = new Swiper(".dCup-hero__swiper", {
     },
   },
 });
+var venueSwiper = new Swiper(".dCup-venues__swiper", {
+  autoPlay: false,
+  spaceBetween: "15px",
+  autoplay: {
+    delay: 3000,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  scrollbar: {
+    el: ".swiper-scrollbar",
+    hide: false,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 2
+    },
+    480: {
+      slidesPerView: 2
+    },
+    768: {
+      slidesPerView: 2
+    },
+    1024: {
+      slidesPerView: 4
+    }
+  }
+});
 var mensSquadSwiper = new Swiper(".mk2-squad__kings-swiper", {
   autoPlay: false,
   spaceBetween: "15px",

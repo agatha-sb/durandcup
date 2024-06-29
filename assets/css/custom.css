@@ -14,7 +14,7 @@
 
 /* Theme Color */
 :root {
-  --clr-accent: rgb(235, 31, 40);
+  --clr-accent: #eb1f28;
   --clr-blue: #223d78;
   --clr-gold: #f0be5e;
   --clr-white: #ffffff;
@@ -98,12 +98,12 @@ svg {
   position: absolute;
   content: '';
   width: 100%;
-  height: 99%;
+  height: 100%;
   background-color: rgba(27, 27, 27, 0.72);
   z-index: 0;
   top: 0;
   left: 0;
-  opacity: 0.72;
+  opacity: 0.45;
 }
 .dCup-bgImg img {
   width: 100%;
@@ -125,11 +125,25 @@ section[class^="dCup-"] {
 .bg-dark-gradient__bottom  {
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.42) 100%);
 }
-.bg-purple  {
-  background-color: var(--clr-purple);
+.bg-theme-gold {
+  background: linear-gradient(to top left, #223d786b 0%, var(--clr-gold) 100%);
 }
-.bg-blue  {
-  background-color: var(--clr-blue);
+.bg-theme-blue {
+  background: linear-gradient(to top left, rgb(148, 213, 247) 0%, #223d78 100%);
+}
+.dCup-texture__bg::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/texture_bg.png');
+  top: 0;
+  left: 0;
+  background-repeat: repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  z-index: -1;
+  opacity: 0.3;
 }
 
 /* Custom Properties */
@@ -158,25 +172,37 @@ section[class^="dCup-"] {
   content: '';
   width: 0%;
   height: 100%;
-  background-color  : var(--clr-blue);
+  background-color: var(--clr-blue);
   z-index: -1;
   transition: all 0.5s ease-in-out;
   left: 0;
   top: 0;
+}
+.dCup-btn__light:not(.dCup-btn__link)::before {
+  background-color: var(--clr-accent);
 }
 .dCup-btn:not(.dCup-btn__link):hover::before {
   /* background-color: var(--clr-gold); */
   transition: all 0.3s ease-in-out;
   width: 100%;
 }
-.dCup-btn__white {
-  background-color: var(--clr-white) !important;
+.dCup-btn__light {
+  background-color: var(--clr-gold) !important;
   background-image: unset;
-  color: var(--clr-black);
 }
-.dCup-btn__white:hover {
+.dCup-btn__light:hover {
   background-color: #E9DBFD !important;
   background-image: unset;
+}
+.dCup-heading__white .dCup-heading__abs {
+  color: #f7f7f726;
+}
+.dCup-heading__white h6 {
+  color: #fff !important;
+}
+.dCup-heading:not(.text-center) .dCup-heading__abs {
+  left: -10px;
+  transform: translateY(-50%);
 }
 .dCup-btn__link {
   background: transparent !important;
@@ -227,7 +253,7 @@ section[class^="dCup-"] {
   color: #1e1e1e;
   text-transform: uppercase;
   font-size: 54px;
-  line-height: 1.11em;
+  line-height: 1.3em;
   margin: 4px 0 0;
 }
 .dCup-heading h6 {
@@ -268,6 +294,7 @@ section[class^="dCup-"] {
   transform: translate(-50%, -50%);
   width: 75%;
   content: '';
+  z-index: -1;
 }
 .dCup-heading:has(h4) {
   padding: 0;
@@ -390,9 +417,9 @@ section[class^="dCup-"] {
   position: absolute;
   content: '';
   width: 0%;
-  height: 100%;
-  background-color: var(--clr-accent);
-  top: 0;
+  height: 3px;
+  background-color: var(--clr-gold);
+  bottom: 0;
   z-index: -1;
   left: 0;
   right: 0;
@@ -404,7 +431,7 @@ section[class^="dCup-"] {
   opacity: 1;
 }
 .dCup-page__header-nav .navbar-nav .nav-item.active::before, .dCup-page__header-nav .navbar-nav .nav-item:hover::before {
-  width: 100%;
+  width: calc(100% - 30px);
   transition: all 0.3s ease-in-out;
 }
 /* .dCup-page__header-nav .navbar-nav .nav-item.active::after, .dCup-page__header-nav .navbar-nav .nav-item:hover::after {
@@ -422,9 +449,11 @@ section[class^="dCup-"] {
   color: var(--clr-white);
   padding: 0 15px;
   font-size: 15px;
-  font-weight: 600;
-  line-height: 45px;
+  font-weight: 500;
+  line-height: 36px;
   font-family: var(--ff-body);
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
 }
 .navbar-toggler:focus {
   box-shadow: none;
@@ -549,6 +578,31 @@ section[class^="dCup-"] {
   width: 100%;
   transform: translate(-50%, -50%);
 }
+.dCup-hero__swiper .swiper-pagination {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  position: absolute;
+  top: 65%;
+  transform: translateY(-50%);
+  padding: 0 50px 0 0px;
+  width: fit-content;
+  right: 0;
+  left: unset;
+}
+.dCup-hero__swiper .swiper-pagination-bullet {
+  display: inline-flex;
+  width: 25px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-accent);
+  border-radius: 0;
+  color: var(--clr-white);
+  font-weight: 800;
+  font-size: 16px;
+}
 .kenburns-left {
 	-webkit-animation: kenburns-left 20s ease-out both;
 	        animation: kenburns-left 20s ease-out both;
@@ -653,6 +707,7 @@ section[class^="dCup-"] {
 .dCup-news__single.wide .img-part {
   position: relative;
   z-index: 1;
+  height: 100%;
 }
 .dCup-news__single.wide .img-part img {
   height: 100%;
@@ -685,6 +740,454 @@ section[class^="dCup-"] {
 *      Section: News End
 **  --------------------------*/
 /** ----------------------------
+*      Section: About Start
+**  --------------------------*/
+
+.dCup-about__right {
+  position: relative;
+  z-index: 3;
+  padding-left: 50px;
+}
+.dCup-about__img-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+.dCup-about__img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.dCup-about__img-1 {
+  height: 240px;
+  width: 43%;
+}
+.dCup-about__img-wrap > * {
+  /*! flex: 1 1 auto; */
+  /*! width: auto; */
+}
+.dCup-about__img.dCup-about__img-2 {
+  height: 400px;
+  width: 53%;
+  margin-top: 50px;
+}
+.dCup-about__img.dCup-about__img-3 {
+  position: absolute;
+  width: 43%;
+  height: 190px;
+  bottom: 0;
+  left: 0;
+  /*! height: 100%; */
+}
+
+.dCup-about__img-wrap::before {
+  position: absolute;
+  content: '';
+  width: 160px;
+  height: 160px;
+  background-color: var(--clr-gold);
+  z-index: -1;
+  top: 54%;
+  transform: translateY(-50%);
+  left: 210px;
+}
+.dCup-about__img-wrap::after {
+  background-image: url('../images/dot.png');
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: -20px;
+  width: 160%;
+  content: '';
+  z-index: -2;
+}
+
+.dCup-about__counter {
+  display: flex;
+  justify-content: center;
+}
+.dCup-about__counter-single {
+  display: flex;
+  align-items: center;
+  padding: 30px 50px;
+}
+.dCup-about__counter-num {
+  font-size: 62px;
+  font-family: var(--ff-primary);
+  font-weight: 700;
+  color: #1e1e1e;
+  line-height: 80px;
+  margin-left: 20px;
+}
+.dCup-about__counter-title h5 {
+  font-size: 16px;
+  font-family: var(--ff-body);
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #626262;
+  letter-spacing: 0.6px;
+}
+.dCup-about__counter-single:not(:first-child) {
+  border-left: 1px solid #0000000a;
+}
+.dCup-about__features {
+  background-color: #f7f7f7;
+  padding: 15px 35px;
+  margin-top: 45px;
+}
+/** ----------------------------
+*      Section: About End
+**  --------------------------*/
+/** ----------------------------
+*      Section: Venue Start
+**  --------------------------*/
+
+.dCup-venues__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px 0;
+}
+.dCup-venues__single {
+  flex: 0 0 auto;
+  width: 48%;
+}
+.dCup-venues__single .content-part {
+  background-color: var(--clr-white);
+  text-align: center;
+  padding: 15px 15px;
+  margin: 0 8px;
+}
+.dCup-venue__location h4 {
+  font-size: 15px;
+  margin-top: 6px;
+  font-family: var(--ff-primary);
+  color: var(--clr-blue);
+  line-height: 22px;
+}
+.dCup-venue__location h6 {
+  font-size: 12px;
+  font-family: var(--ff-body);
+  color: #515151;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.dCup-venue__location h6 span {
+  font-size: 12px;
+  margin-right: 5px;
+  color: var(--clr-accent);
+}
+
+.dCup-venues__single .img-part {
+  height: 280px;
+}
+.dCup-venues__single .img-part img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.dCup-venue__left {
+  position: sticky;
+  top: 102px;
+}
+/** ----------------------------
+*      Section: Venue End
+**  --------------------------*/
+/** ----------------------------
+*      Section: Insta Start
+**  --------------------------*/
+
+.dCup-insta__single img {
+  height: 345px;
+  object-fit: cover;
+  width: 100%;
+  object-position: center;
+}
+.dCup-insta__wrap > * {
+  flex: 0 0 auto;
+  width: 20%;
+}
+
+.dCup-insta__single {
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+}
+.dCup-insta__single::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: #eeb9543d;
+  z-index: 0;
+  right: 0;
+  left: 0;
+  transition: all 0.2s ease-in-out;
+  margin: 0 auto;
+  top: 0;
+}
+.dCup-insta__single:hover::before {
+  width: 0;
+  transition: all 0.2s ease-in-out;
+}
+.dCup-insta .dCup-btn {
+  position: absolute;
+  z-index: 4;
+  background-color: rgba(235, 31, 40, 0.37) !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px !important;
+  gap: 10px;
+}
+/** ----------------------------
+*      Section: Insta End
+**  --------------------------*/
+
+
+.dCup-standings .dCup-bgImg {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 100%;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+.table-title {
+  background-color: var(--clr-blue);
+  color: var(--clr-white);
+  padding: 15px 25px;
+  border-radius: 20px 20px 0 0;
+}
+.table-title h4 {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+thead tr th {
+  background-color: #F5EDFD !important;
+  font-size: 13px;
+  font-family: var(--ff-body);
+  text-align: center;
+font-weight: 500;
+}
+tbody tr:nth-child(2n) td {
+  background-color: #F5EDFD;
+}
+.table-team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.table-team img {
+  height: 35px;
+  object-fit: contain;
+}
+tbody tr td {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  min-width: 40px;
+}
+
+.form-listing {
+  display: flex;
+  gap: 11px;
+  justify-content: center;
+  align-items: center;
+}
+.form-list__item {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  line-height: 9px;
+}
+.form-list__item.win {
+  background-color: green;
+}
+.form-list__item.loss {
+  background-color: red;
+}
+.form-list__item.draw {
+  background-color: #8c8c8c;
+}
+.form-list__item p {
+  font-size: 12px;
+  color: var(--clr-white);
+}
+.dCup-standings.dCup-texture__bg::before {
+  /* z-index: 1; */
+  opacity: 0.5;
+}
+.dCup-standings .overlay::before {
+  background: linear-gradient(to right bottom, #102657, #212860, #312967, #41296e, #522773, #692676, #7f2378, #941f77, #b12172, #ca296a, #df3960, #f04d54);
+  opacity: 0.9;
+}
+/** ----------------------------
+*      Section: Gallery Start
+**  --------------------------*/
+.dCup-videos.dCup-py {
+  background-color: #f5f5f5;
+}
+.dCup-videos .dCup-heading__abs {
+  color: var(--clr-white);
+}
+.mk2-gallery__tab-wrap li {
+  display: inline-block;
+  width: 100%;
+}
+.mk2-gallery__tab-wrap li:not(:first-child) {
+  margin-bottom: 15px;
+}
+.mk2-gallery__tab-single.mk2-gallery__tab-image {
+}
+.mk2-gallery__tab-wrap li:first-child img {
+  height: 500px;
+  width: 500px;
+  object-fit: cover;
+}
+.mk2-gallery__tab-wrap {
+  column-count: 3;
+  gap: 20px;
+}
+.mk2-gallery__tab-wrap li img {
+  height: 239px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.mk2-gallery__tab-wrap li a {
+  position: relative;
+  display: block;
+}
+.play-icon {
+  position: absolute;
+  top: 16px;
+  background-color: var(--clr-accent);
+  color: var(--clr-white);
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0%;
+  border: 5px solid #fff;
+  font-size: 12px;
+  text-indent: 2px;
+  left: 16px;
+}
+.mk2-gallery__tab-wrap li h5 {
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+}
+.mk2-gallery__tab-wrap li h5 {
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+  background: linear-gradient(to top, #223d789e 0%, #223d7800 100%);
+  width: 100%;
+  padding: 60px 16px 20px;
+  color: var(--clr-white);
+  text-transform: uppercase;
+  font-size: 16px;
+}
+/** ----------------------------
+*      Section: Gallery End
+**  --------------------------*/
+/** ----------------------------
+*      Section: Sponsors Start
+**  --------------------------*/
+
+.dCup-sponsors__single {
+  display: flex;
+  flex: 0 0 auto;
+  /*! width: 25%; */
+  position: relative;
+  padding: 25px 30px 35px;
+  border: 1px dashed var(--clr-gold);
+}
+.dCup-sponsors__wrap {
+  flex-wrap: wrap;
+  gap: 36px;
+  justify-content: center;
+}
+.dCup-sponsors__single:has(:nth-child(4)) {
+  width: 50%;
+}
+.dCup-sponsors__single:has(:nth-child(2)) {
+  /*! width: 33%; */
+}
+.dCup-sponsors__single img {
+  height: 150px;
+  object-fit: contain;
+}
+.dCup-sponsors__single h5 {
+  position: absolute;
+  font-size: 18px;
+  text-transform: capitalize;
+  color: var(--clr-blue);
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--clr-white);
+  padding: 0 12px;
+  width: max-content;
+}
+/** ----------------------------
+*      Section: Sponsors End
+**  --------------------------*/
+/** ----------------------------
+*      Section: Tickets Start
+**  --------------------------*/
+.dCup-tickets-cta .dCup-bgImg {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 100%;
+  left: 0;
+  overflow: hidden;
+}
+.dCup-tickets-cta .overlay::before {
+  background: linear-gradient(to right bottom, #102657, #212860, #312967, #41296e, #522773, #692676, #7f2378, #941f77, #b12172, #ca296a, #df3960, #f04d54);
+  opacity: 0.9;
+}
+.dCup-tickets-cta__main{
+  position: relative;
+  z-index: 3;
+}
+.dCup-tickets-cta.dCup-texture__bg::before {z-index: 1;opacity: 0.5;}
+
+.dCup-tickets-cta__right img {
+  height: 240px;
+  object-fit: contain;
+  object-position: center;
+  margin: 0 auto;
+  width: 100%;
+}
+.dCup-tickets-cta__right {
+  background-color: #fff;
+  padding: 30px 10px;
+  border-radius: 10px;
+}
+/** ----------------------------
+*      Section: Tickets End
+**  --------------------------*/
+/** ----------------------------
 *      Section: Name Start
 **  --------------------------*/
 /** ----------------------------
@@ -694,38 +1197,39 @@ section[class^="dCup-"] {
 *      Section: Footer Start
 **  --------------------------*/
 .dCup-page__footer {
-  background-color: #1A1028;
+  background-color: #091a3e;
   position: relative;
-  padding-top: 40px;
+  padding-top: 70px;
+  z-index: 3;
 }
 .dCup-page__footer-top {
-  border-top: 1px solid rgba(203, 153, 79, 0.54);
-  padding: 50px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0px 0 50px;
 }
 .dCup-page__footer::before {
   position: absolute;
   content: '';
-  width: 100%;
+  width: 75%;
   height: 100%;
-  background-image: url('../images/footer-bg-pattern.png');
+  background-image: url('../images/footer-bg.png');
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  top: 0;
+  background-size: contain;
+  background-position: bottom;
+  bottom: 0px;
   left: 0;
   z-index: -1;
-  opacity: 0.09;
+  opacity: 1;
+  right: 0;
+  margin: 0 auto;
 }
 .dCup-page__footer-wrap {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
 }
 .dCup-page__footer-socials ul {
   display: flex;
   gap: 15px;
-  justify-content: center;
   align-items: center;
 }
 .dCup-page__footer-socials ul li a {
@@ -733,11 +1237,11 @@ section[class^="dCup-"] {
   width: 40px;
   height: 40px;
   display: block;
-  background-color: #A383C1;
-  color: #1A1028;
+  background-color: var(--clr-white);
+  color: var(--clr-black);
   line-height: 40px;
   text-align: center;
-  border-radius: 50%;
+  border-radius: 0;
   transition: all 0.5s ease-in-out;
 }
 .dCup-page__footer-socials ul li a:hover {
@@ -746,42 +1250,61 @@ section[class^="dCup-"] {
   transition: all 0.5s ease-in-out;
 }
 .dCup-page__footer-contact p {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 24px;
-  font-family: var(--ff-body);
-  font-weight: 500;
   margin: 15px 0;
+  color: var(--clr-white);
 }
 .dCup-page__footer-contact ul {
   margin-bottom: 25px;
 }
 .dCup-page__footer-contact ul li a {
-  color: rgb(219, 215, 209);
-  font-size: 16px;
-  line-height: 28px;
-  font-family: var(--ff-body);
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
-.dCup-page__footer-contact ul li a span {
+.dCup-page__footer-contact ul li a .icon img {
+  height: 36px;
+  object-fit: contain;
+  width: 100%;
+}
+.dCup-page__footer-contact ul li a h4 span {
   color: rgb(203, 153, 79);
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 7px;
+  font-family: var(--ff-primary);
+}
+.dCup-page__footer-contact ul li a h4 {
+  font-size: 16px;
+  font-family: var(--ff-body);
+  font-weight: 400;
+  color: #ccc;
+}
+.dCup-page__footer-contact ul li:not(:last-child) {
+  margin-bottom: 20px;
 }
 .dCup-page__footer-nav {
   margin-top: 25px;
 }
+.dCup-page__footer-teams ul {
+  column-count: 2;
+}
 .dCup-page__footer-nav ul .nav-item .nav-link {
-  font-size: 14px;
-  color: var(--clr-white);
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1px;
   position: relative;
   transition: all 0.5s ease-in-out;
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  color: #ccc;
+  font-family: var(--ff-body);
 }
 .dCup-page__footer-nav ul .nav-item {
-  padding: 0 8px;
+  padding-bottom: 10px;
 }
 .dCup-page__footer-nav ul .nav-item .nav-link:hover {
   color: var(--clr-accent);
@@ -822,14 +1345,48 @@ section[class^="dCup-"] {
   transition: all 0.5s ease-in-out 0.5s;
 }
 .dCup-page__footer-copyright {
-  background-color: var(--clr-blue);
-  padding: 15px 0;
+  background-color: #0213377a;
+  padding: 9px 0;
   text-align: center;
 }
 .dCup-page__footer-copy p {
   font-size: 14px;
   color: #b0b0b0;
   letter-spacing: 0.3px;
+}
+
+
+.dCup-page__footer__title h3 {
+  color: var(--clr-white);
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+.footer-team__link {
+  position: relative;
+  padding-left: 33px;
+  display: inline-block;
+  font-size: 16px;
+  color: #ccc;
+  font-family: var(--ff-body);
+}
+.footer-team__link .team-logo {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.footer-team__link .team-logo img {
+  height: 25px;
+  object-fit: contain;
+}
+.footer-team__item {
+  line-height: 30px;
+  padding-bottom: 10px;
+}
+.dCup-page__footer-logo img {
+  height: 100px;
+  object-fit: contain;
 }
 /** ----------------------------
 *      Section: Footer End
