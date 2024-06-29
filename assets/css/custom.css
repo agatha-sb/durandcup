@@ -950,6 +950,58 @@ section[class^="dCup-"] {
 *      Section: Insta End
 **  --------------------------*/
 
+/* .dCup-clubs + * {
+  padding-top: 150px;
+}
+.dCup-clubs {
+  margin: 0px 15px -50px;
+  z-index: 4 !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+} */
+
+.dCup-clubs .dCup-bgImg {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 100%;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.dCup-clubs__single {
+  border: 1px solid #ffffff14;
+  flex: 0 0 auto;
+  width: 16%;
+}
+.dCup-clubs__wrap.d-flex {
+  flex-wrap: wrap;
+}
+.dCup-clubs__single a {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  padding: 22px 12px;
+  flex-direction: column;
+}
+.dCup-clubs__single a img {
+  height: 50px;
+  object-fit: contain;
+}
+
+.dCup-clubs__single a h5 {
+  /*! display: block; */
+  font-size: 14px;
+  text-align: center;
+  color: var(--clr-white);
+  font-family: var(--ff-body);
+  text-transform: capitalize;
+  width: 75%;
+  margin: 12px auto 0;
+}
+
+
 
 
 .dCup-matches {
