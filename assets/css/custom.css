@@ -1,0 +1,837 @@
+/**
+ * Filename: custom.css
+ *
+ * 1. Fonts
+ * 2. Theme Color
+ * 3. Browser Reset
+ * 4. Utility Classes
+ * 5. Theme Classes
+ *
+ */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
+
+/* Theme Color */
+:root {
+  --clr-accent: rgb(235, 31, 40);
+  --clr-blue: #223d78;
+  --clr-gold: #f0be5e;
+  --clr-white: #ffffff;
+  --clr-white-600: #fcfcfc;
+  --clr-black: #000000;
+
+  --ff-primary: "Oswald", sans-serif;
+  --ff-body: "Yantramanav", sans-serif;
+
+  --swiper-scrollbar-bottom: 0px;
+  --swiper-scrollbar-size: 2px;
+  --swiper-scrollbar-drag-bg-color: var(--clr-accent);
+}
+
+/* Browser Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+}
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+a:focus,
+a:hover {
+  outline: none;
+}
+a {
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+body {
+  font-family: var(--ff-body);
+  text-rendering: optimizeSpeed;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #1e1e1e;
+}
+p {
+  margin-bottom: 0;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgb(138, 138, 138);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-primary);
+  margin-bottom: 0;
+}
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utility Classes */
+.overlay::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 99%;
+  background-color: rgba(27, 27, 27, 0.72);
+  z-index: 0;
+  top: 0;
+  left: 0;
+  opacity: 0.72;
+}
+.dCup-bgImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  z-index: -1;
+}
+section[class^="dCup-"] {
+  position: relative;
+  z-index: 3;
+}
+
+/* Theme Classes */
+.bg-dark-gradient {
+  background-image: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.29) 100%);
+}
+.bg-dark-gradient__bottom  {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.42) 100%);
+}
+.bg-purple  {
+  background-color: var(--clr-purple);
+}
+.bg-blue  {
+  background-color: var(--clr-blue);
+}
+
+/* Custom Properties */
+.dCup-py {
+  padding: 100px 0;
+}
+.dCup-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--clr-accent);
+  color: #fff;
+  text-transform: uppercase;
+  font-family: var(--ff-primary);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 16px 32px;
+  border-radius: 0;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.dCup-btn:not(.dCup-btn__link)::before {
+  position: absolute;
+  content: '';
+  width: 0%;
+  height: 100%;
+  background-color  : var(--clr-blue);
+  z-index: -1;
+  transition: all 0.5s ease-in-out;
+  left: 0;
+  top: 0;
+}
+.dCup-btn:not(.dCup-btn__link):hover::before {
+  /* background-color: var(--clr-gold); */
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+.dCup-btn__white {
+  background-color: var(--clr-white) !important;
+  background-image: unset;
+  color: var(--clr-black);
+}
+.dCup-btn__white:hover {
+  background-color: #E9DBFD !important;
+  background-image: unset;
+}
+.dCup-btn__link {
+  background: transparent !important;
+  padding: 0 0 4px !important;
+  font-size: 15px;
+  color: #1e1e1e;
+  font-weight: 600;
+}
+
+.dCup-btn__link::before {
+  position: absolute;
+  content: '';
+  width: 24px;
+  height: 2px;
+  background-color: var(--clr-blue);
+  bottom: 0;
+  transition: all 0.3s ease-in-out;
+}
+.dCup-btn__link:hover::before {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.dCup-btn__wrap {
+  margin-top: 24px;
+}
+.dCup-heading {
+  position: relative;
+  padding: 0;
+  margin-bottom: 36px;
+}
+.dCup-heading__dots {
+  padding: 25px 0 70px;
+  margin-bottom: -20px;
+}
+/* .dCup-heading::before {
+  position: absolute;
+  content: '';
+  width: 6px;
+  height: 91%;
+  background-color: var(--clr-purple-400);
+  left: 0;
+  border-radius: 0;
+  top: 50%;
+  transform: translateY(-50%);
+} */
+.dCup-heading h3 {
+  font-weight: 600;
+  color: #1e1e1e;
+  text-transform: uppercase;
+  font-size: 54px;
+  line-height: 1.11em;
+  margin: 4px 0 0;
+}
+.dCup-heading h6 {
+  color: #8c8c8c;
+  font-size: 13px;
+  line-height: 1.1em;
+  font-weight: 400;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  font-family: var(--ff-body);
+}
+.dCup-heading__abs {
+  position: absolute;
+  color: #f7f7f7;
+  z-index: -1;
+  font-weight: 700;
+  text-transform: uppercase;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 16px;
+  font-family: var(--ff-primary);
+  font-size: 200px;
+  letter-spacing: -.025em;
+}
+.dCup-heading__white h3 {
+  color: var(--clr-white);
+}
+.dCup-heading__white::before {
+  background-color: var(--clr-white);
+}
+.dCup-heading__dots::after {
+  background-image: url('../images/dot.png');
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  content: '';
+}
+.dCup-heading:has(h4) {
+  padding: 0;
+  margin-bottom: 0;
+}
+.dCup-heading:has(h4)::before {
+  display: none;
+}
+.dCup-heading h4 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: capitalize;
+}
+.dCup-desc p {
+  /* font-weight: 300;
+  line-height: 26px; */
+}
+.dCup-desc > :not(:last-child) {
+  margin-bottom: 16px;
+}
+[class^="swiper-button-"]::after {
+  content: '';
+  display: none;
+}
+.swiper-button-next, .swiper-button-prev {
+  width: 35px;
+  height: 35px;
+  color: #fff;
+  background-color: var(--clr-purple);
+  border-radius: 50%;
+}
+.swiper-wrapper {
+  padding-bottom: 15px;
+}
+.swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+  bottom: 0px;
+}
+/** =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+ HOMEPAGE START =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+ */
+/** ----------------------------
+*      Section: Header Start
+**  --------------------------*/
+.dCup-page__header {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 9;
+}
+.dCup-page__header.fixed__header {
+  position: fixed;
+  opacity: 1 !important;
+  transition: all 0.5s ease-in-out;
+  z-index: 99;
+  top: 0;
+  pointer-events: unset !important;
+}
+.dCup-page__header.fixed__header .dCup-page__header-wrap {
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.dCup-page__header.fixed__header .dCup-page__header-wrap::before {
+  display: none;
+}
+.dCup-page__header.fixed__header .dCup-page__header-nav .navbar-nav .nav-item::before {
+  display: none;
+}
+.dCup-page__header.fixed__header .dCup-page__header-nav .navbar-nav .nav-link {
+  color: var(--clr-blue);
+  line-height: 80px;
+}
+.dCup-page__header.fixed__header .dCup-page__header-nav .navbar-nav .nav-item.active::after, .dCup-page__header.fixed__header .dCup-page__header-nav .navbar-nav .nav-item:hover::after {
+  background-color: var(--clr-accent);
+}
+.dCup-page__header.fixed__header .navbar-brand img {
+  height: 70px;
+}
+.dCup-page__header.fixed__header .dCup-page__header-nav .navbar-nav .active .nav-link {
+  color: var(--clr-accent);
+}
+.dCup-page__header-wrap::before {
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  z-index: -2;
+  content: '';
+  background: linear-gradient(to bottom, rgb(0, 0, 0) 0% , rgba(0, 0, 0, 0) 100%);
+  opacity: 0.7;
+}
+.dCup-page__header-nav {
+  padding: 0;
+}
+.dCup-page__header-nav .navbar-brand {
+  padding: 10px 0;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--clr-white);
+  border-radius: 0 0 50% 50%;
+  height: 150px;
+  width: 140px;
+  display: inline-flex;
+  justify-content: center;
+}
+.dCup-page__header-nav .navbar-brand img {
+  height: 110px;
+  width: 100%;
+  object-fit: contain;
+}
+.dCup-page__header.fixed__header .navbar-brand {
+  padding: 8px 0;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+}
+.dCup-page__header-nav .navbar-nav .nav-item {
+  position: relative;
+}
+.dCup-page__header-nav .navbar-nav .nav-item::before {
+  position: absolute;
+  content: '';
+  width: 0%;
+  height: 100%;
+  background-color: var(--clr-accent);
+  top: 0;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  margin: 0 auto;
+}
+.dCup-page__header-nav .navbar-nav .nav-item.active::before {
+  opacity: 1;
+}
+.dCup-page__header-nav .navbar-nav .nav-item.active::before, .dCup-page__header-nav .navbar-nav .nav-item:hover::before {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+/* .dCup-page__header-nav .navbar-nav .nav-item.active::after, .dCup-page__header-nav .navbar-nav .nav-item:hover::after {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 1px;
+  bottom: 32%;
+  left: 50%;
+  background-color: var(--clr-white);
+  transform: translateX(-50%);
+  transition: all 0.3s ease-in-out 0.3s;
+} */
+.dCup-page__header-nav .navbar-nav .nav-link {
+  color: var(--clr-white);
+  padding: 0 15px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 45px;
+  font-family: var(--ff-body);
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+  color: #000000;
+}
+.navbar-toggler {
+  position: relative;
+  padding: 9px 10px;
+  background-image: none;
+  border: 1px solid transparent;
+  margin: 0;
+  height: 45px;
+  width: 45px;
+  border-radius: 0;
+  z-index: 9999;
+}
+.navbar-toggler { 
+  background-color: black;
+}
+.navbar-toggler .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+.navbar-toggler .icon-bar { 
+  /*change the hamburger bars color */
+  background-color: #fff;
+}
+.navbar-toggler .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+.dCup-page__header-top {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.38);
+  margin-left: 50px;
+  padding: 0 0 20px;
+  margin-bottom: 20px;
+}
+.dCup-page__header-link a {
+  color: var(--clr-white);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--ff-body);
+}
+.dCup-page__header-socials li a {
+  color: var(--clr-white);
+  font-size: 15px;
+  padding: 0 12px;
+}
+/** ----------------------------
+*      Section: Header End
+**  --------------------------*/
+/** ----------------------------
+*      Section: Hero Start
+**  --------------------------*/
+/* .dCup-hero {
+  overflow: hidden;
+  height: 100vh;
+} */
+/* .dCup-hero__wrap {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  left: 0;
+  transform: translateY(-50%);
+} */
+.dCup-hero__content {
+  margin-top: 95px;
+}
+.dCup-hero__heading5 h5 {
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.dCup-hero__heading h1, .dCup-hero__heading h2 {
+  font-size: 54px;
+  line-height: 62px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.dCup-hero__heading h1 .highlight, .dCup-hero__heading h2 .highlight {
+  background-color: var(--clr-blue);
+  font-weight: 300;
+  font-style: italic;
+  padding: 0 12px;
+  display: inline-block;
+}
+.dCup-hero__desc p {
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 24px;
+}
+.dCup-hero__overlay-text h6 {
+  font-family: "Inter Tight";
+  height: auto;
+  width: auto;
+  color: rgba(255, 255, 255, 0.09);
+  white-space: nowrap;
+  text-align: left;
+  line-height: 327px;
+  letter-spacing: 0px;
+  font-weight: 600;
+  font-size: 360px;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  mix-blend-mode: difference;
+}
+.dCup-hero__single-wrap {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+.kenburns-left {
+	-webkit-animation: kenburns-left 20s ease-out both;
+	        animation: kenburns-left 20s ease-out both;
+}
+ @-webkit-keyframes kenburns-left {
+  0% {
+    -webkit-transform: scale(1) translate(0, 0);
+            transform: scale(1) translate(0, 0);
+    -webkit-transform-origin: 16% 50%;
+            transform-origin: 16% 50%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translate(-20px, 15px);
+            transform: scale(1.25) translate(-20px, 15px);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+}
+@keyframes kenburns-left {
+  0% {
+    -webkit-transform: scale(1) translate(0, 0);
+            transform: scale(1) translate(0, 0);
+    -webkit-transform-origin: 16% 50%;
+            transform-origin: 16% 50%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translate(-20px, 15px);
+            transform: scale(1.25) translate(-20px, 15px);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+}
+/** ----------------------------
+*      Section: Hero End
+**  --------------------------*/
+
+
+/** ----------------------------
+*      Section: News Start
+**  --------------------------*/
+
+.dCup-news__wrap {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px 0px;
+}
+.dCup-news__wrap > * {
+  flex: 0 0 auto;
+  width: 23.7%;
+}
+.dCup-news__single {
+  position: relative;
+  height: 505px;
+  overflow: hidden;
+}
+.dCup-news__single.wide {
+  width: 48.7%;
+}
+.dCup-news__single .date {
+  color: #8c8c8c;
+  font-size: 11px;
+  line-height: 1.1em;
+  font-weight: 500;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  margin-top: 10px;
+  display: inline-block;
+}
+.dCup-news__single a {
+  display: inline-block;
+}
+.dCup-news__single .title {
+  display: block;
+}
+.dCup-news__single .img-part {
+  width: 100%;
+}
+.dCup-news__single .img-part img {
+  height: 265px;
+  width: 100%;
+  object-fit: cover;
+}
+.dCup-news__single .content-part .title h4 {
+  font-size: 25px;
+  color: #1e1e1e;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.4;
+  margin: 0px 0 12px;
+}
+.dCup-news__single .dCup-btn.dCup-btn__link {
+  margin-top: 12px;
+}
+.dCup-news__single.wide .content-part {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  bottom: 0;
+  padding: 30px;
+}
+
+.dCup-news__single.wide .img-part {
+  position: relative;
+  z-index: 1;
+}
+.dCup-news__single.wide .img-part img {
+  height: 100%;
+}
+.dCup-news__single.wide .img-part::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #223d78 0%, #223d7800 100%);
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.dCup-news__single.wide .date {
+  color: var(--clr-white);
+}
+.dCup-news__single.wide .content-part .title h4 {
+  color: var(--clr-white);
+}
+.dCup-news__single.wide .content-part .desc {
+  display: none;
+}
+.dCup-news__single.wide .content-part .dCup-btn__link {
+  color: var(--clr-gold);
+  margin: 0;
+}
+.dCup-news__single.wide .content-part .dCup-btn__link::before {background-color: var(--clr-gold);}
+/** ----------------------------
+*      Section: News End
+**  --------------------------*/
+/** ----------------------------
+*      Section: Name Start
+**  --------------------------*/
+/** ----------------------------
+*      Section: Name End
+**  --------------------------*/
+/** ----------------------------
+*      Section: Footer Start
+**  --------------------------*/
+.dCup-page__footer {
+  background-color: #1A1028;
+  position: relative;
+  padding-top: 40px;
+}
+.dCup-page__footer-top {
+  border-top: 1px solid rgba(203, 153, 79, 0.54);
+  padding: 50px 0;
+}
+.dCup-page__footer::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/footer-bg-pattern.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.09;
+}
+.dCup-page__footer-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.dCup-page__footer-socials ul {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.dCup-page__footer-socials ul li a {
+  font-size: 15px;
+  width: 40px;
+  height: 40px;
+  display: block;
+  background-color: #A383C1;
+  color: #1A1028;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+}
+.dCup-page__footer-socials ul li a:hover {
+  background-color: rgb(203, 153, 79);
+  color: var(--clr-white);
+  transition: all 0.5s ease-in-out;
+}
+.dCup-page__footer-contact p {
+  font-size: 18px;
+  line-height: 24px;
+  font-family: var(--ff-body);
+  font-weight: 500;
+  margin: 15px 0;
+}
+.dCup-page__footer-contact ul {
+  margin-bottom: 25px;
+}
+.dCup-page__footer-contact ul li a {
+  color: rgb(219, 215, 209);
+  font-size: 16px;
+  line-height: 28px;
+  font-family: var(--ff-body);
+}
+.dCup-page__footer-contact ul li a span {
+  color: rgb(203, 153, 79);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.dCup-page__footer-nav {
+  margin-top: 25px;
+}
+.dCup-page__footer-nav ul .nav-item .nav-link {
+  font-size: 14px;
+  color: var(--clr-white);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+.dCup-page__footer-nav ul .nav-item {
+  padding: 0 8px;
+}
+.dCup-page__footer-nav ul .nav-item .nav-link:hover {
+  color: var(--clr-accent);
+  transition: all 0.5s ease-in-out;
+}
+.dCup-page__footer-nav ul .nav-item .nav-link::before {
+  position: absolute;
+  content: '';
+  width: 0%;
+  height: 1px;
+  background-color: var(--clr-purple-400);
+  bottom: 0;
+  left: unset;
+  right: 0;
+  transition: all 0.5s ease-in-out;
+}
+.dCup-page__footer-nav ul .nav-item .nav-link:hover::before {
+  width: 100%;
+  left: 0;
+  right: unset;
+  transition: all 0.5s ease-in-out;
+}
+.dCup-page__footer-nav ul .nav-item .nav-link::after {
+  position: absolute;
+  content: '';
+  width: 0%;
+  height: 1px;
+  background-color: var(--clr-accent);
+  bottom: 0;
+  left: unset;
+  right: 0;
+  transition: all 0.5s ease-in-out 0.5s;
+}
+.dCup-page__footer-nav ul .nav-item .nav-link:hover::after {
+  width: 100%;
+  left: 0;
+  right: unset;
+  transition: all 0.5s ease-in-out 0.5s;
+}
+.dCup-page__footer-copyright {
+  background-color: var(--clr-blue);
+  padding: 15px 0;
+  text-align: center;
+}
+.dCup-page__footer-copy p {
+  font-size: 14px;
+  color: #b0b0b0;
+  letter-spacing: 0.3px;
+}
+/** ----------------------------
+*      Section: Footer End
+**  --------------------------*/
+/** =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+ HOMEPAGE END =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+ */
