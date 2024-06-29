@@ -40,7 +40,7 @@ var heroSwiper = new Swiper(".dCup-hero__swiper", {
     },
   },
 });
-var venueSwiper = new Swiper(".dCup-venues__swiper", {
+var matchesSwiper = new Swiper(".dCup-matches__swiper", {
   autoPlay: false,
   spaceBetween: "15px",
   autoplay: {
@@ -65,7 +65,7 @@ var venueSwiper = new Swiper(".dCup-venues__swiper", {
       slidesPerView: 2
     },
     1024: {
-      slidesPerView: 4
+      slidesPerView: 2
     }
   }
 });
