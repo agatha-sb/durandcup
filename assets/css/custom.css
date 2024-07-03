@@ -503,6 +503,55 @@ section[class^="dCup-"] {
   font-size: 15px;
   padding: 0 12px;
 }
+
+.dCup-page__header-marquee {
+  padding: 12px 0;
+  overflow: hidden;
+  position: relative;
+  border-left: 1px solid #ffffff2e;
+}
+.dCup-page__header-marquee-wrap {
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  width: 100%;
+  position: absolute;
+  white-space: nowrap;
+  animation: 45s linear infinite marquee;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+@keyframes marquee {
+  0% {
+    left:100%
+  }
+  100% {
+    left:-100%
+  }
+}
+.dCup-page__header-marquee-wrap li {
+  margin: 0 6px;
+}
+.dCup-page__header-marquee-wrap li a {
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  gap: 6px;
+}
+.dCup-page__header-marquee-wrap li a p {
+  font-size: 16px;
+  color: #fff;
+  color: var(--clr-white);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--ff-body);
+}
+
+.dCup-page__header-marquee-wrap li a span {
+  font-size: 8px;
+  color: var(--clr-gold);
+}
 /** ----------------------------
 *      Section: Header End
 **  --------------------------*/
