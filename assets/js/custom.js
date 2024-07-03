@@ -1,7 +1,7 @@
 
 
 // ************************************************* //
-// * +++++++++++++ 02. Header sticky & navbar ++++++++++++++ * //
+// * +++++++++++ Fancybox Gallery ++++++++++++ * //
 // ************************************************* //
 
 Fancybox.bind('[data-fancybox="gallery-1"]', {
@@ -23,7 +23,9 @@ Fancybox.bind('[data-fancybox="gallery-3"]', {
   },
 });
 
-
+// ************************************************* //
+// * +++++++++++ Swiper Sliders ++++++++++++ * //
+// ************************************************* //
 var heroSwiper = new Swiper(".dCup-hero__swiper", {
   slidesPerView: 1,
   autoPlay: false,
@@ -103,65 +105,10 @@ var mensSquadSwiper = new Swiper(".mk2-squad__kings-swiper", {
   }
 });
 
-var womensSquadSwiper = new Swiper(".mk2-squad__kueens-swiper", {
-  autoPlay: false,
-  spaceBetween: "15px",
-  loop: true,
-  grid: {
-    rows: 2,
-    fill: "row",
-  },
-  autoplay: {
-    delay: 3000,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  scrollbar: {
-    el: ".swiper-scrollbar",
-    hide: false,
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1
-    },
-    480: {
-      slidesPerView: 2.5
-    },
-    768: {
-      slidesPerView: 2.5
-    },
-    1024: {
-      slidesPerView: 3
-    }
-  }
-});
-var fixturesSwiper = new Swiper(".mk2-fixtures__matches-swiper", {
-  direction: "vertical",
-  autoplay: {
-    delay: 3000,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1
-    },
-    480: {
-      slidesPerView: 2
-    },
-    768: {
-      slidesPerView: 2
-    },
-    1024: {
-      slidesPerView: 3
-    }
-  }
-});
 
+// ************************************************* //
+// * +++++++++++ Magnific Popup ++++++++++++ * //
+// ************************************************* //
 $('.popup-youtube').magnificPopup({
   type: 'iframe',
   iframe: {
