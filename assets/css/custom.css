@@ -1616,6 +1616,10 @@ tbody tr td {
   color: #ccc;
   font-family: var(--ff-body);
 }
+.footer-team__link p {
+  color: inherit;
+  font-size: inherit;
+}
 .footer-team__link .team-logo {
   position: absolute;
   left: 0;
