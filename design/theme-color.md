@@ -5,6 +5,20 @@ Gold-shade: #af8031
 Blue-shade: #0c50a0
 Sky-blue: #7bc6ee
 
+** Home
+** About
+    >> About Durand
+    >> The Legacy
+    >> Last 5 Years
+** Updates
+** Teams
+** Fixtures
+** Standings
+** Winners
+** Sponsors & Partners
+** Gallery
+** Contact
+
 
 1) https://campo.bold-themes.com/demo-01/home/soccer/
 2) https://topscorer.qodeinteractive.com/hockey/
