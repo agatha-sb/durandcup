@@ -1538,7 +1538,7 @@ tbody tr td {
   margin-top: 25px;
 }
 .dCup-page__footer-teams ul {
-  column-count: 6;
+  column-count: 2;
 }
 .dCup-page__footer-nav ul .nav-item .nav-link {
   position: relative;
@@ -1616,6 +1616,10 @@ tbody tr td {
   color: #ccc;
   font-family: var(--ff-body);
 }
+.footer-team__link p {
+  color: inherit;
+  font-size: inherit;
+}
 .footer-team__link .team-logo {
   position: absolute;
   left: 0;
@@ -1623,7 +1627,7 @@ tbody tr td {
   transform: translateY(-50%);
 }
 .footer-team__link .team-logo img {
-  height: 55px;
+  height: 25px;
   object-fit: contain;
 }
 .footer-team__item {
