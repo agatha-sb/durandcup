@@ -1214,7 +1214,7 @@ text-transform: uppercase;
   background-color: var(--clr-blue);
   color: var(--clr-white);
   padding: 15px 25px;
-  border-radius: 20px 20px 0 0;
+  border-radius: 0;
 }
 .table-title h4 {
   font-size: 16px;
@@ -2058,6 +2058,7 @@ tbody tr td {
   background-color:#fff;
   position:relative;
   z-index:2;
+  margin-bottom: 40px;
 }
 .dCup-filter__toggle {
   display:none;
@@ -2141,9 +2142,7 @@ tbody tr td {
 }
 
 
-.dCup-inner__gallery-wrap {
-  margin-top: 40px;
-}
+
 .dCup-inner__gallery-single {
   position: relative;
   display: block;
