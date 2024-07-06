@@ -2192,6 +2192,78 @@ tbody tr td {
   font-size: 10px;
 }
 .dCup-inner__gallery-image .play-icon {background-color: var(--clr-gold);}
+
+
+.dCup-inner__about-intro {
+  position: relative;
+  z-index: 1;
+}
+.dCup-inner__about-intro::before {
+  position: absolute;
+  content: "";
+  background-image: url("../images/dot.png");
+  height: 100%;
+  left: 0px;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+.dCup-inner__about-intro .dCup-heading h4 {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 45px;
+  width: 60%;
+  margin: 0 auto;
+}
+.dCup-inner__about-logo {
+  margin-bottom: 24px;
+}
+.dCup-inner__about-logo img {
+  margin: 0 auto;
+  height: 190px;
+}
+.dCup-inner__about-video {
+  margin-top: 40px;
+}
+.dCup-inner__about-video video {
+  width: 100%;
+  height: 485px;
+  object-fit: cover;
+}
+.dCup-inner__about-trophy {
+  margin-top: 30px;
+}
+.dCup-inner__about-mission {
+  position: relative;
+  z-index: 2;
+}
+.dCup-inner__about-mission .overlay::before {
+  background: linear-gradient(to right bottom, rgb(16, 38, 87), rgb(33, 40, 96), rgb(49, 41, 103), rgb(65, 41, 110), rgb(82, 39, 115), rgb(105, 38, 118), rgb(127, 35, 120), rgb(148, 31, 119), rgb(177, 33, 114), rgb(202, 41, 106), rgb(223, 57, 96), rgb(240, 77, 84));
+  opacity: 0.9;
+}
+.dCup-inner__about-mission .dCup-bgImg {
+  position: absolute;
+  height: 100%;
+  top: 0px;
+  width: 100%;
+  left: 0px;
+  overflow: hidden;
+  z-index: -1;
+}
+.dCup-inner__about-mission .dCup-about__counter {
+  flex-wrap: wrap;
+}
+.dCup-about__counter-single {
+  padding: 30px 30px;
+  flex: 0 0 auto;
+  width: 50%;
+}
+.dCup-inner__about-mission .dCup-about__counter-num {color: #fff;}
+.dCup-inner__about-mission .dCup-about__counter-title h5 {color: #fff;}
+.dCup-inner__about-mission p {color: rgb(255, 255, 255);}
+
+
 /* header not home */
 body:not(.home) .dCup-page__header-link a, 
 body:not(.home) .dCup-page__header-marquee-wrap li a p,
