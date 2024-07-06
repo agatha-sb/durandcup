@@ -1812,7 +1812,7 @@ tbody tr td {
   left: 0;
   top: 0;
   bottom: 0;
-  background-color: #38a9ff;
+  background-color: var(--clr-accent);
   border-radius: 3px 0 0 0;
 }
 .dCup-widget--sidebar .dCup-widget__content {
