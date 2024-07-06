@@ -20,6 +20,7 @@
   --clr-white: #ffffff;
   --clr-white-600: #fcfcfc;
   --clr-black: #000000;
+  --clr-black-300: #333;
 
   --ff-primary: "Oswald", sans-serif;
   --ff-body: "Yantramanav", sans-serif;
@@ -1684,7 +1685,7 @@ tbody tr td {
   font-weight: 600;
 }
 .dCup-inner__banner-breadcrumb .breadcrumb-item {
-  font-size: 13px;
+  font-size: 12px;
   text-transform: uppercase;
   color: inherit;
   letter-spacing: 3px;
@@ -1692,7 +1693,7 @@ tbody tr td {
   --bs-breadcrumb-divider-color: #fff;
 }
 .dCup-inner__banner-breadcrumb .breadcrumb {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .dCup-inner__banner-breadcrumb .breadcrumb-item a {
   color: inherit;
@@ -1708,7 +1709,7 @@ tbody tr td {
   background-color: #fff;
 }
 .dCup-inner__news-wrap .dCup-news__single .content-part {
-  padding: 25px 25px;
+  padding: 8px 25px 25px;
 }
 .dCup-inner__news-wrap .dCup-news__single .content-part .title h4 {
   font-size: 20px;
@@ -1930,3 +1931,19 @@ tbody tr td {
   color: var(--clr-white);
   border-color: var(--clr-blue);
 }
+
+
+/* header not home */
+body:not(.home) .dCup-page__header-link a, 
+body:not(.home) .dCup-page__header-marquee-wrap li a p,
+body:not(.home) .dCup-page__header-nav .navbar-nav .nav-link {
+  color: var(--clr-black-300);
+}
+body:not(.home) .dCup-page__header-top,
+body:not(.home) .dCup-page__header-marquee {
+  border-color: rgba(0, 0, 0, 0.05);
+}
+body:not(.home) .dCup-page__header-wrap::before {
+  display: none;
+}
+/* header not home */
