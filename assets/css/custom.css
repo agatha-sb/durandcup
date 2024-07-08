@@ -2264,6 +2264,82 @@ tbody tr td {
 .dCup-inner__about-mission p {color: rgb(255, 255, 255);}
 
 
+.dCup-inner__contact-form {
+  background-color: var(--clr-white-600);
+  padding: 50px 40px;
+}
+.dCup-inner__contact-links {
+  margin-top: 42px;
+}
+.dCup-inner__contact-list li a {
+  display: flex;
+  align-items: center;
+}
+.dCup-inner__contact-list li a .icon img {
+  height: 40px;
+  object-fit: contain;
+}
+.dCup-inner__contact-list li a .content-part {
+  padding-left: 16px;
+}
+.dCup-inner__contact-list li + li {
+  margin-top: 32px;
+}
+.dCup-inner__contact-list li a .content-part h6 {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--clr-blue);
+  letter-spacing: 0.8px;
+}
+.dCup-inner__contact-list li a .content-part p {
+  font-size: 18px;
+  margin-top: 10px;
+  width: 80%;
+  line-height: 24px;
+}
+
+
+.form-label {
+  display: block;
+  margin-bottom: 9px;
+  color: #979797;
+  font-size: 11px;
+  line-height: 1.1em;
+  font-weight: 500;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  padding: 0;
+}
+.form-control {
+  background-color: transparent;
+  border: 1px solid #e8e8e9;
+  border-radius: 0;
+  color: #0d0d0d;
+  cursor: pointer;
+  font-family: var(--ff-primary);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  line-height: 30px;
+  margin: 0 0 23px;
+  outline: 0;
+  padding: 12px 20px;
+  text-transform: none;
+}
+.form-control:focus {
+  color: var(--bs-body-color);
+  background-color: transparent;
+  border-left: 6px solid var(--clr-gold);
+box-shadow: none;
+}
+textarea.form-control {
+  height: 120px;
+  resize: none;
+}
+.form-group.form-button .dCup-btn {
+  border: none;
+}
+
 /* header not home */
 body:not(.home) .dCup-page__header-link a, 
 body:not(.home) .dCup-page__header-marquee-wrap li a p,
