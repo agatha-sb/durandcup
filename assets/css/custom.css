@@ -2340,6 +2340,16 @@ textarea.form-control {
   border: none;
 }
 
+
+
+.dCup-inner__winners-wrap .table-team {
+  justify-content: center;
+}
+.dCup-inner__winners-wrap tbody tr:nth-child(2n) td {
+  background-color: #Fff;
+}
+
+
 /* header not home */
 body:not(.home) .dCup-page__header-link a, 
 body:not(.home) .dCup-page__header-marquee-wrap li a p,
