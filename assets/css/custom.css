@@ -2350,6 +2350,126 @@ textarea.form-control {
 }
 
 
+.dCup-inner__legacy-workflow {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+}
+.dCup-inner__legacy-workflow .dCup-inner__legacy-workflow-item:nth-child(2n+1) {
+  flex-direction: row;
+}
+.dCup-inner__legacy-workflow .dCup-inner__legacy-workflow-item:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+.dCup-inner__legacy-workflow .dCup-inner__legacy-workflow-item {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+.dCup-inner__legacy-workflow .dCup-inner__legacy-workflow-item::after {
+  background-color: #0d0d0d;
+  border-radius: 100%;
+  content: '';
+  display: block;
+  height: 7px;
+  left: calc(50% - 3px);
+  position: absolute;
+  top: 46px;
+  width: 7px;
+}
+.dCup-inner__legacy-workflow .dCup-inner__legacy-workflow-item::before {
+  background-color: #e8e8e9;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 50px;
+  width: 1px;
+  z-index: -1;
+}
+.dCup-inner__legacy-workflow .dCup-inner__legacy-workflow-item:nth-child(2n+1) .dCup-inner__legacy-workflow-text {
+  text-align: right;
+}
+.dCup-inner__legacy-workflow .dCup-inner__legacy-workflow-item:nth-child(2n) .dCup-inner__legacy-workflow-text {
+  text-align: left;
+}
+.dCup-inner__legacy-workflow .dCup-inner__legacy-workflow-text {
+  background-color: #fff;
+  border: 1px solid #e8e8e9;
+  margin: 0 25px;
+  padding: 31px 36px 27px;
+  position: relative;
+  width: 40%;
+}
+.dCup-inner__legacy-workflow .dCup-inner__legacy-workflow-text::after {
+  background-color: #fe5900;
+  content: '';
+  display: block;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: all .3s ease-out;
+  z-index: 1;
+  height: 100%;
+  width: 4px;
+  -webkit-clip-path: inset(0 0 100% 0);
+  clip-path: inset(0 0 100% 0);
+  opacity: 0;
+  transition: all .3s ease-out,opacity .15s ease-out;
+}
+.dCup-inner__legacy-workflow .dCup-inner__legacy-workflow-item:nth-child(2n+1) .dCup-inner__legacy-workflow-date {
+  text-align: left;
+}
+.dCup-inner__legacy-workflow .dCup-inner__legacy-workflow-item:nth-child(2n) .dCup-inner__legacy-workflow-date {
+  text-align: right;
+}
+.dCup-inner__legacy-workflow .dCup-inner__legacy-workflow-date {
+  margin: 0 25px;
+  padding: 44px 37px;
+  width: 40%;
+}
+.dCup-inner__legacy-workflow-date p {
+  margin: 0;
+  color: #8c8c8c;
+font-size: 13px;
+  line-height: 14px;
+  font-weight: 400;
+  letter-spacing: 4.55px;
+  text-transform: uppercase;
+}
+.dCup-inner__legacy::before {
+  position: absolute;
+  content: '';
+  background-image: url('../images/legacy\ \(1\).png');
+  width: 40%;
+  height: 65%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  right: 0;
+  bottom: 0;
+  background-blend-mode: luminosity;
+  background-color: #fff;
+  z-index: -1;
+}
+.dCup-inner__legacy::after {
+  position: absolute;
+  content: '';
+  background-image: url('../images/legacy\ \(2\).png');
+  width: 40%;
+  height: 65%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 0;
+  bottom: 0;
+  background-blend-mode: luminosity;
+  background-color: #fff;
+  z-index: -1;
+}
+
 /* header not home */
 body:not(.home) .dCup-page__header-link a, 
 body:not(.home) .dCup-page__header-marquee-wrap li a p,
